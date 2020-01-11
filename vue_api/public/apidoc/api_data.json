@@ -1,0 +1,899 @@
+[
+  {
+    "type": "get",
+    "url": "/api/cart",
+    "title": "获取购物车数据",
+    "description": "<p>获取购物车数据</p>",
+    "name": "/api/cart",
+    "group": "cart",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>用户id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "res.send({\n        code: '10012',\n        message: '购物车空空如'\n      })\n  res.send({\n    code: '10119',\n    message: '无效的token'\n  })\n\n  res.send({\n      code: '200',\n      message: '购物车的列表数据',\n      data\n    })",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/cart"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/cart.js",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "post",
+    "url": "/api/cart/add",
+    "title": "加入购物车",
+    "description": "<p>加入购物车</p>",
+    "name": "/api/cart/add",
+    "group": "cart",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "proid",
+            "description": "<p>产品id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>用户id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "num",
+            "description": "<p>加入购物车的数量</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "res.send({\n         code: '10011',\n         message: '加入购物车成功'\n       })\n   res.send({\n     code: '10119',\n     message: '无效的token'\n   })",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/cart/add"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/cart.js",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "get",
+    "url": "/api/cart/delete",
+    "title": "删除数据",
+    "description": "<p>删除数据</p>",
+    "name": "/api/cart/delete",
+    "group": "cart",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "cartid",
+            "description": "<p>购物车id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "res.send({\n        code: '10014',\n        message: '删除成功'\n      })\n  res.send({\n    code: '10119',\n    message: '无效的token'\n  })",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/cart/delete"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/cart.js",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "get",
+    "url": "/api/cart/update",
+    "title": "更新购物车",
+    "description": "<p>更新购物车</p>",
+    "name": "/api/cart/update",
+    "group": "cart",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "cartid",
+            "description": "<p>购物车id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "num",
+            "description": "<p>购物车数量</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "res.send({\n        code: '10013',\n        message: '更新成功'\n      })\n  res.send({\n    code: '10119',\n    message: '无效的token'\n  })",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/cart/update"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/cart.js",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "get",
+    "url": "/api/pro",
+    "title": "获取产品列表接口",
+    "description": "<p>列表</p>",
+    "name": "/api/pro",
+    "group": "pro",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "pageCode",
+            "description": "<p>页码（从0开始）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "limitNum",
+            "description": "<p>每页显示个数（默认为10）</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 没有更多数据了\n{\n code: '10000',\n message: '没有更多数据了'\n}\n// 正常\n{\n   code: '200',\n   message: '获取产品的数据',\n   length: data.length, // 获取到多少条数据\n   data: data // 获取到的数据\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/pro"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/pro.js",
+    "groupTitle": "pro"
+  },
+  {
+    "type": "get",
+    "url": "/api/pro/all",
+    "title": "获取所有产品接口",
+    "description": "<p>所有商品</p>",
+    "name": "/api/pro/all",
+    "group": "pro",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 没有更多数据了\n{\n code: '10000',\n message: '没有更多数据了'\n}\n// 正常\n{\n   code: '200',\n   message: '获取产品的数据',\n   length: data.length, // 获取到多少条数据\n   data: data // 获取到的数据\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/pro/all"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/pro.js",
+    "groupTitle": "pro"
+  },
+  {
+    "type": "get",
+    "url": "/api/pro/category",
+    "title": "产品分类",
+    "description": "<p>产品分类</p>",
+    "name": "/api/pro/category",
+    "group": "pro",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type",
+            "description": "<p>商品的分类</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n   code: '200',\n   message: '获取产品的分类',\n   data: ['', ''] \n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/pro/category"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/pro.js",
+    "groupTitle": "pro"
+  },
+  {
+    "type": "get",
+    "url": "/api/pro/categorylist",
+    "title": "获取大分类下的数据",
+    "description": "<p>获取大分类下的数据</p>",
+    "name": "/api/pro/categorylist",
+    "group": "pro",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type",
+            "description": "<p>商品的分类</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "res.send({\n     code: '200',\n     message: '分类列表',\n      data: {\n         \"__v\": 0,\n         \"type\": \"苹果\",\n         \"proname\": \"\",\n         \"proimg\": \"\",\n         \"price\": ,\n         \"stock\": 1000,\n         \"sales\": 50,\n         \"rating\": 5,\n         \"flag\": 0,\n         \"note\": \"\",\n         \"detail\": \"\",\n         \"proid\": \"pro_d245ee20-0c40-11ea-9bb7-f90a52a739bb\",\n         \"zj\": \"\"\n     }\n   })",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/pro/categorylist"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/pro.js",
+    "groupTitle": "pro"
+  },
+  {
+    "type": "get",
+    "url": "/api/pro/detail",
+    "title": "产品详情",
+    "description": "<p>产品详情</p>",
+    "name": "/api/pro/detail",
+    "group": "pro",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "proid",
+            "description": "<p>产品id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n   code: '200',\n   message: '获取产品的详情数据',\n   data: {\n \"__v\": 0,\n          \"type\": \"苹果\",\n          \"proname\": \"荣耀20\",\n          \"proimg\": \"\",\n          \"price\": 2299,\n          \"stock\": 1000,\n          \"sales\": 50,\n          \"rating\": 5,\n          \"flag\": 0,\n          \"note\": \"\",\n          \"detail\": \"\",\n          \"proid\": \"pro_d245ee20-0c40-11ea-9bb7-f90a52a739bb\",\n          \"zj\": \"\"\n      }\n}\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/pro/detail"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/pro.js",
+    "groupTitle": "pro"
+  },
+  {
+    "type": "get",
+    "url": "/api/pro/findd",
+    "title": "产品",
+    "description": "<p>产品</p>",
+    "name": "/api/pro/findd",
+    "group": "pro",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "proid",
+            "description": "<p>产品id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"data\": [\n        {\n            \"_id\": \"5deef2a72eeaf52c4c2c2960\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\",\n            \"proname\": \"芒橙柑柚\",\n            \"price\": 34,\n            \"detail\": \"重庆忠县柑橘忠橙爱媛38号果冻\",\n            \"title\": \"水果新鲜包邮当季整箱9斤\",\n            \"stock\": 3423,\n            \"sales\": 121,\n            \"proimg\": \"https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/3015214310/O1CN014ZY5U61hi1cKEq4qv_!!0-item_pic.jpg_360x360Q90.jpg_.webp\",\n            \"activity\": 1,\n            \"pintuan\": 0,\n            \"type\": \"橙子\",\n            \"mail\": 1\n        },\n        {\n            \"_id\": \"5e001e57ae7e8633dc06eb49\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\"\n        },\n        {\n            \"_id\": \"5e001e5fae7e8633dc06eb4a\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\"\n        },\n        {\n            \"_id\": \"5e001e60ae7e8633dc06eb4b\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\"\n        },\n        {\n            \"_id\": \"5e001e60ae7e8633dc06eb4c\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\"\n        },\n        {\n            \"_id\": \"5e001e61ae7e8633dc06eb4d\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\"\n        },\n        {\n            \"_id\": \"5e001e62ae7e8633dc06eb4e\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\"\n        },\n        {\n            \"_id\": \"5e001e87b619dd23d4d32f64\",\n            \"__v\": 0,\n            \"proid\": \"pro_20962911-1aeb-11ea-a4c1-ffafc37b3253\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/pro/findd"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/pro.js",
+    "groupTitle": "pro"
+  },
+  {
+    "type": "get",
+    "url": "/api/pro/sort",
+    "title": "产品排序",
+    "description": "<p>产品排序</p>",
+    "name": "/api/pro/sort",
+    "group": "pro",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type",
+            "description": "<p>排序规则（price 价格 / stock 库存 / sales 销量 / rating  评分/ flag 推荐）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "num",
+            "description": "<p>升序还是降序（num 1 升序）</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 没有更多数据了\n{\n code: '10000',\n message: '没有更多数据了'\n}\n// 正常\n{\n   code: '200',\n   message: '获取产品的数据',\n   length: data.length, // 获取到多少条数据\n   data: data // 获取到的数据\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/pro/sort"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/pro.js",
+    "groupTitle": "pro"
+  },
+  {
+    "type": "get",
+    "url": "/api/users/getInfo",
+    "title": "获取用户信息",
+    "description": "<p>获取用户信息</p>",
+    "name": "/api/users/getInfo",
+    "group": "users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>用户id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 未登录\nres.send({ \n    code: '10119', \n    message: '没有找到token.' \n  });\n\nres.send({\n      code: '200',\n      message: '获取用户的信息',\n      data: {\n        username, tel, sex, birthday, email, userid\n      }\n    })",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/users/getInfo"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/users.js",
+    "groupTitle": "users"
+  },
+  {
+    "type": "post",
+    "url": "/api/users/login",
+    "title": "登陆接口",
+    "description": "<p>登陆接口</p>",
+    "name": "/api/users/login",
+    "group": "users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tel",
+            "description": "<p>联系方式</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>密码</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 登陆成功\n{\n   code: '10010',\n   message: '登陆成功',\n   data: {\n     userid: '',\n     username: '',\n     token: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZWwiOiIxODgxMzAwNzgxNCIsImlhdCI6MTU3NTM0NDIzMCwiZXhwIjoxNTc1NDMwNjMwfQ.Tst5MC5Rvu-oDugnUUc3ze067hiosLOxC20MnMCWtIQ\"\n   }\n }\n // 密码错误\n{\n   code: '10100',\n   message: '密码错误'\n }\n // 用户未注册\n{\n   code: '10086',\n   message: '用户未注册'\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/users/login"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/users.js",
+    "groupTitle": "users"
+  },
+  {
+    "type": "post",
+    "url": "/api/users/register",
+    "title": "注册接口",
+    "description": "<p>注册接口</p>",
+    "name": "/api/users/register",
+    "group": "users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "username",
+            "description": "<p>用户名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tel",
+            "description": "<p>联系方式</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>密码</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 注册成功\n{\n   code: '10101',\n   message: '注册成功'\n }\n // 注册失败\n{\n   code: '10003',\n   message: '注册失败'\n }\n // 用户已注册\n{\n   code: '10000',\n   message: '用户已注册'\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/users/register"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/users.js",
+    "groupTitle": "users"
+  },
+  {
+    "type": "get",
+    "url": "/api/users/sendCode",
+    "title": "发送短信验证码",
+    "description": "<p>发送短信验证码</p>",
+    "name": "/api/users/sendCode",
+    "group": "users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tel",
+            "description": "<p>联系方式</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 发送成功\n{\n   code: '10004',\n   message: '发送验证码成功'\n   data: code\n }\n // 发送失败\n{\n   code: '10005',\n   message: '发送验证码失败'\n }\n // 用户已注册\n{\n   code: '10000',\n   message: '用户已注册'\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/users/sendCode"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/users.js",
+    "groupTitle": "users"
+  },
+  {
+    "type": "post",
+    "url": "/api/users/update",
+    "title": "修改个人中心",
+    "description": "<p>修改个人中心</p>",
+    "name": "/api/users/update",
+    "group": "users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>用户id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tel",
+            "description": "<p>联系方式</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "username",
+            "description": "<p>用户名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "sex",
+            "description": "<p>性别 （1 表示男  0 表示女）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>邮箱</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "birthday",
+            "description": "<p>生日</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "data",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "// 修改个人信息成功\n{\n   code: '11009',\n   message: '修改个人信息成功'\n }\n // 修改个人信息失败\n{\n   code: '11110',\n   message: '修改个人信息失败'\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/api/users/update"
+      }
+    ],
+    "version": "1.0.0",
+    "filename": "api/users.js",
+    "groupTitle": "users"
+  }
+]
